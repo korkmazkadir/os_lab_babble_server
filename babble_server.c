@@ -237,9 +237,7 @@ void communicate(int* newsockfd) {
             notify_parse_error(cmd, recv_buff);
             free(cmd);
         } else {
-
             put(commandBuffer, cmd);
-
         }
         free(recv_buff);
     }
@@ -254,6 +252,8 @@ void communicate(int* newsockfd) {
         free(cmd);
     }
 
+    printf("Closing communication thread...\n");
+    
     close(*newsockfd);
     remove_from_heap(newsockfd);
 }
@@ -286,7 +286,7 @@ int main(int argc, char *argv[]) {
     int opt;
     int nb_args = 1;
 
-    commandBuffer = createBuffer(100);
+    commandBuffer = createBuffer(1000);
 
     pthread_t executorThread;
     pthread_create(&executorThread, NULL, (void*) executeCommand, NULL);
