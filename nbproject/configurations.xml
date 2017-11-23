@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <in>babble_client.c</in>
+      <in>babble_client.h</in>
+      <in>babble_client_implem.c</in>
+      <in>babble_communication.c</in>
+      <in>babble_communication.h</in>
+      <in>babble_config.h</in>
+      <in>babble_publication_set.c</in>
+      <in>babble_publication_set.h</in>
+      <in>babble_registration.c</in>
+      <in>babble_registration.h</in>
+      <in>babble_server.c</in>
+      <in>babble_server.h</in>
+      <in>babble_server_implem.c</in>
+      <in>babble_types.h</in>
+      <in>babble_utils.c</in>
+      <in>babble_utils.h</in>
+      <in>cmd_buffer.c</in>
+      <in>cmd_buffer.h</in>
+      <in>follow_test.c</in>
+      <in>stress_test.c</in>
+      <in>utils.c</in>
+      <in>utils.h</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>nbproject/private/launcher.properties</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-g"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="babble_client.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="babble_client_implem.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="babble_communication.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="babble_publication_set.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="babble_registration.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="babble_server.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="babble_server_implem.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="babble_utils.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="cmd_buffer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="cmd_buffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="follow_test.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="stress_test.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="utils.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="utils.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="server" type="0">
+      <toolsSet>
+        <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE}</buildCommand>
+          <cleanCommand>${MAKE} clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="babble_client.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_client.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="babble_client_implem.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_communication.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_communication.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="babble_config.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="babble_publication_set.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_publication_set.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="babble_registration.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_registration.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="babble_server.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_server.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="babble_server_implem.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_types.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="babble_utils.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_utils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cmd_buffer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="cmd_buffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="follow_test.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="stress_test.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="utils.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="utils.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="client" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE}</buildCommand>
+          <cleanCommand>${MAKE} clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="babble_client.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_client.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="babble_client_implem.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_communication.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_communication.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="babble_config.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="babble_publication_set.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_publication_set.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="babble_registration.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_registration.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="babble_server.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_server.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="babble_server_implem.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_types.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="babble_utils.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="babble_utils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cmd_buffer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="cmd_buffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="follow_test.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="stress_test.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="utils.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="utils.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

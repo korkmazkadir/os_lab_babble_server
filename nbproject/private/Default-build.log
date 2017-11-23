@@ -1,0 +1,15 @@
+gcc -c babble_server.c -g  -Wall 
+gcc -c babble_utils.c -g  -Wall 
+gcc -c babble_server_implem.c -g  -Wall 
+gcc -c babble_communication.c -g  -Wall 
+gcc -c babble_registration.c -g  -Wall 
+gcc -c babble_publication_set.c -g  -Wall 
+gcc -o babble_server.run babble_server.o babble_utils.o babble_server_implem.o babble_communication.o babble_registration.o babble_publication_set.o -lpthread
+gcc -c babble_client.c -g  -Wall 
+gcc -c babble_client_implem.c -g  -Wall 
+gcc -o babble_client.run babble_client.o babble_communication.o babble_utils.o babble_client_implem.o
+gcc -c stress_test.c -g  -Wall 
+gcc -o stress_test.run stress_test.o babble_communication.o babble_utils.o babble_client_implem.o -lpthread
+gcc -c follow_test.c -g  -Wall 
+gcc -o follow_test.run follow_test.o babble_communication.o babble_utils.o babble_client_implem.o -lpthread
+rm follow_test.o stress_test.o
