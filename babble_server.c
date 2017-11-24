@@ -17,6 +17,10 @@
 #include "babble_communication.h"
 #include "utils.h"
 #include "cmd_buffer.h"
+#include "thread_pool.h"
+
+thread_pool_t * thread_pool_executor;
+thread_pool_t * thread_pool_communication;
 
 static void display_help(char *exec) {
     printf("Usage: %s -p port_number\n", exec);
@@ -174,6 +178,28 @@ static int answer_command(command_t *cmd) {
     return 0;
 }
 
+void executeCommand() {
+
+    printf("Executor thread is working...\n");
+
+    //while (1) {
+        
+        command_t *cmd = pop(commandBuffer);
+        
+        if (process_command(cmd) == -1) {
+            fprintf(stderr, "Warning: unable to process command from client %lu\n", cmd->key);
+        }
+
+        if (answer_command(cmd) == -1) {
+            fprintf(stderr, "Warning: unable to answer command from client %lu\n", cmd->key);
+        }
+
+        free(cmd);
+    //}
+
+}
+
+
 void communicate(int* newsockfd) {
     char* recv_buff = NULL;
     int recv_size = 0;
@@ -238,6 +264,7 @@ void communicate(int* newsockfd) {
             free(cmd);
         } else {
             put(commandBuffer, cmd);
+            add_task_to_thread_pool(thread_pool_executor, (void*) executeCommand, NULL );
         }
         free(recv_buff);
     }
@@ -258,26 +285,7 @@ void communicate(int* newsockfd) {
     remove_from_heap(newsockfd);
 }
 
-void executeCommand() {
 
-    printf("Executor thread is working...\n");
-
-    while (1) {
-        
-        command_t *cmd = pop(commandBuffer);
-        
-        if (process_command(cmd) == -1) {
-            fprintf(stderr, "Warning: unable to process command from client %lu\n", cmd->key);
-        }
-
-        if (answer_command(cmd) == -1) {
-            fprintf(stderr, "Warning: unable to answer command from client %lu\n", cmd->key);
-        }
-
-        free(cmd);
-    }
-
-}
 
 int main(int argc, char *argv[]) {
     int sockfd, newsockfd;
@@ -286,10 +294,14 @@ int main(int argc, char *argv[]) {
     int opt;
     int nb_args = 1;
 
-    commandBuffer = createBuffer(1000);
+    commandBuffer = createBuffer(1000000);
 
-    pthread_t executorThread;
-    pthread_create(&executorThread, NULL, (void*) executeCommand, NULL);
+    //pthread_t executorThread;
+    //pthread_create(&executorThread, NULL, (void*) executeCommand, NULL);
+    
+    thread_pool_communication = create_thread_pool(BABBLE_COMMUNICATION_THREADS,1000000,"Pool-Com");
+    thread_pool_executor = create_thread_pool(BABBLE_EXECUTOR_THREADS,1000000,"Pool-Exec");
+
     
     while ((opt = getopt(argc, argv, "+p:")) != -1) {
         switch (opt) {
@@ -326,8 +338,10 @@ int main(int argc, char *argv[]) {
         }
 
 
-        pthread_t communicationThread;
-        pthread_create(&communicationThread, NULL, (void*) communicate, (void*) copy_to_heap_int(newsockfd));
+        //pthread_t communicationThread;
+        //pthread_create(&communicationThread, NULL, (void*) communicate, (void*) copy_to_heap_int(newsockfd));
+        
+        add_task_to_thread_pool(thread_pool_communication, (void*) communicate, (void*) copy_to_heap_int(newsockfd) );
         
     }
 

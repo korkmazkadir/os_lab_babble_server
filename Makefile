@@ -9,6 +9,7 @@ TARGETS = babble_server.run babble_client.run stress_test.run follow_test.run
 SERVER_DEPS= 	babble_utils.c \
 		utils.c \
 		cmd_buffer.c \
+		thread_pool.c \
 		babble_server_implem.c \
 		babble_communication.c \
 		babble_registration.c \
