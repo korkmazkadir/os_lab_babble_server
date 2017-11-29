@@ -255,6 +255,7 @@ void communicate(int* newsockfd) {
     free(recv_buff);
     free(cmd);
 
+
     /* looping on client commands */
     while ((recv_size = network_recv(*newsockfd, (void**) &recv_buff)) > 0) {
         cmd = new_command(client_key);
@@ -296,9 +297,6 @@ int main(int argc, char *argv[]) {
 
     commandBuffer = createBuffer(1000000);
 
-    //pthread_t executorThread;
-    //pthread_create(&executorThread, NULL, (void*) executeCommand, NULL);
-    
     thread_pool_communication = create_thread_pool(BABBLE_COMMUNICATION_THREADS,1000000,"Pool-Com");
     thread_pool_executor = create_thread_pool(BABBLE_EXECUTOR_THREADS,1000000,"Pool-Exec");
 
@@ -337,10 +335,6 @@ int main(int argc, char *argv[]) {
             return -1;
         }
 
-
-        //pthread_t communicationThread;
-        //pthread_create(&communicationThread, NULL, (void*) communicate, (void*) copy_to_heap_int(newsockfd));
-        
         add_task_to_thread_pool(thread_pool_communication, (void*) communicate, (void*) copy_to_heap_int(newsockfd) );
         
     }

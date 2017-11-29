@@ -31,8 +31,8 @@ void put(cmd_buffer_t *buffer, command_t *cmd) {
     buffer->endIndex++;
 
     printf("Waiting commands : %ld \n", (buffer->endIndex - buffer->startIndex));
-
-    pthread_cond_signal(&(buffer->cond));
+    
+    pthread_cond_broadcast(&(buffer->cond));
     pthread_mutex_unlock(&(buffer->mutex));
 }
 
@@ -48,7 +48,7 @@ command_t * pop(cmd_buffer_t *buffer) {
 
     printf("-Waiting commands : %ld \n", (buffer->endIndex - buffer->startIndex));
 
-    pthread_cond_signal(&(buffer->cond));
+    pthread_cond_broadcast(&(buffer->cond));
     pthread_mutex_unlock(&(buffer->mutex));
 
     return cmd;

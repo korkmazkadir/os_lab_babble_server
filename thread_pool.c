@@ -86,8 +86,8 @@ void task_queue_put(task_queue_t * queue, task_t * task) {
     queue->endIndex++;
 
     printf("Waiting tasks : %ld \n", (queue->endIndex - queue->startIndex));
-
-    pthread_cond_signal(&(queue->cond));
+    
+    pthread_cond_broadcast(&(queue->cond));
     pthread_mutex_unlock(&(queue->mutex));
 }
 
@@ -103,7 +103,7 @@ task_t * task_queue_pop(task_queue_t * queue) {
 
     printf("-Waiting tasks : %ld \n", (queue->endIndex - queue->startIndex));
 
-    pthread_cond_signal(&(queue->cond));
+    pthread_cond_broadcast(&(queue->cond));
     pthread_mutex_unlock(&(queue->mutex));
 
     return task;
